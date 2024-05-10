@@ -1,0 +1,7 @@
+{
+  "error_code": 0,
+  "error_text": "",
+  "command_from": "application_get_link",
+  "app_link_full": "https://pop.selfmgmt.com/assessment/link",
+  "rep_link_full": "https://pop.selfmgmt.com/assessment/report/link"
+}

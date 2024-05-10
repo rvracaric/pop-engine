@@ -1,0 +1,83 @@
+{
+  "error_code": 0,
+  "error_text": "",
+  "command_from": "score_calc_get",
+  "rep_link_full": "https://pop.selfmgmt.com/assessment/report/link",
+  "calc_acc_id": "464",
+  "language_id": "eng",
+  "main_score_found": true,
+  "score": 3,
+  "score_final": 3,
+  "score_text": "",
+  "answers": [
+    {
+      "q": "1",
+      "a": 5,
+      "c": "1 self managing",
+      "t": "self managing:taking responsibility for self; acting on own authority",
+      "v": "Definitely like me"
+    },
+    {
+      "q": "2",
+      "a": 5,
+      "c": "2 disliking pressure",
+      "t": "disliking pressure:feeling anxious when under stress",
+      "v": "Definitely like me"
+    },
+    {
+      "q": "3",
+      "a": "Text answer typed in by candidate. There is no 'v' field in this case when 'a' is not an integer.",
+      "c": "3 talkative",
+      "t": "talkative:inclined to talk a great deal"
+    }
+  ],
+  "report_name_has": true,
+  "report_name": "EPOP",
+  "position_reducers": [
+    {
+      "aname": "overall_stoplight",
+      "caption_tr_rdc": "OVERALL PREVIEW",
+      "eps": 1,
+      "score": 3,
+      "score_final": 2,
+      "score_text": "Proceed with Caution",
+      "avalue": 2,
+      "caption_tr_score": "Proceed with Caution",
+      "trait_name": "dummy position trait"
+    }
+  ],
+  "traits": [
+    {
+      "trait_name": "Enterprising (ENT)",
+      "caption_tr": "Enterprising Orientation",
+      "score": 147
+    },
+    {
+      "trait_name": "Acquiescent (ACQ)",
+      "caption_tr": "Acquiescent",
+      "score": 147
+    },
+    {
+      "trait_name": "Investigative (INV)",
+      "caption_tr": "Investigative Orientation",
+      "score": 147
+    }
+  ],
+  "super_traits": [
+    {
+      "score": 0,
+      "trait_name": "EP",
+      "caption_tr": "Enterprising Potential (EP)"
+    },
+    {
+      "score": -0.125,
+      "trait_name": "AO",
+      "caption_tr": "Analytical Orientation (AO)"
+    },
+    {
+      "score": 5.9375,
+      "trait_name": "AP",
+      "caption_tr": "Achievement Potential (AP)"
+    }
+  ]
+}
