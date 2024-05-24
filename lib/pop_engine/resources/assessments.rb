@@ -6,23 +6,23 @@ module PopEngine
       request_options[:position_id] ||= request_options.delete(:assessment_type_id) # Alias for position_id
 
       request_body = { command: 'application_create', partner_api: true }.merge!(**request_options, **custom_fields)
-      Assessment.new(post_request(body: request_body).body)
+      Assessment.new(post_request(body: request_body))
     end
 
     def list(**options)
       response = post_request(body: request_body_with_pagination('application_get', options))
-      Collection.from_response(response.body, key: 'application_list', type: Assessment)
+      Collection.from_response(response, key: 'application_list', type: Assessment)
     end
 
     def retrieve(assessment_id, **options)
-      Assessment.new(post_request(body: { command: 'application_get', partner_api: true, application_id: assessment_id, **options }).body)
+      Assessment.new(post_request(body: { command: 'application_get', partner_api: true, application_id: assessment_id, **options }))
     end
 
     def links(assessment_id, **options)
       response = post_request(body: { command: 'application_get_link', partner_api: true, application_id: assessment_id, **options })
-      response.body.merge!(application_id: assessment_id) # Assessment id isn't returned in the response
+      response.merge!(application_id: assessment_id) # Assessment id isn't returned in the response
 
-      Assessment.new(response.body)
+      Assessment.new(response)
     end
 
     def scores(assessment_id, **options)
@@ -38,9 +38,9 @@ module PopEngine
       request_body = { command: 'score_calc_get', partner_api: true, application_id: assessment_id, **options }
 
       response = post_request(body: request_body)
-      response.body.merge!(application_id: assessment_id) # Since assessment id isn't returned in the response
+      response.merge!(application_id: assessment_id) # Since assessment id isn't returned in the response
 
-      Assessment.new(response.body)
+      Assessment.new(response)
     end
 
     private

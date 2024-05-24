@@ -1,3 +1,4 @@
+require 'json'
 require 'faraday'
 require_relative 'pop_engine/version'
 
