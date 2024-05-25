@@ -12,16 +12,17 @@ module PopEngine
     private
 
     def post_request(body:, headers: {})
-      handle_response client.connection.post('', body, headers)
+      handle_response client.connection.post('', JSON.generate(body), headers)
     end
 
     def handle_response(response)
+      body = JSON.parse(response.body)
+
       # Response status from the POP Engine is always 200 OK. The error code is provided in the body.
+      raise Error, "Unable to perform the request due to server-side problems. #{body['error']}" unless response.status == 200
+      return body if body['error_code'] == 0
 
-      raise Error, "Unable to perform the request due to server-side problems. #{response.body['error']}" unless response.status == 200
-      return response if response.body['error_code'] == 0
-
-      raise Error, "Error code: #{response.body['error_code']}. #{response.body['error_text']}"
+      raise Error, "Error code: #{body['error_code']}. #{body['error_text']}"
     end
 
     def request_body_with_pagination(command, options = {})

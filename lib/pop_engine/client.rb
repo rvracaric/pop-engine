@@ -25,8 +25,7 @@ module PopEngine
     def connection
       @connection ||= Faraday.new(API_URL) do |conn|
         conn.basic_auth(username, password)
-        conn.request :json
-        conn.response :json, content_type: 'application/json'
+        conn.headers['Content-Type'] = 'application/json'
         conn.adapter adapter, @stubs
       end
     end
