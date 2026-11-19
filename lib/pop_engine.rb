@@ -17,6 +17,7 @@ module PopEngine
   autoload :Answer, 'pop_engine/objects/answer'
   autoload :Assessment, 'pop_engine/objects/assessment'
   autoload :AssessmentType, 'pop_engine/objects/assessment_type'
+  autoload :AssessmentFamily, 'pop_engine/objects/assessment_family'
   autoload :Candidate, 'pop_engine/objects/candidate'
   autoload :CustomFields, 'pop_engine/objects/custom_fields'
   autoload :Trait, 'pop_engine/objects/trait'

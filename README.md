@@ -86,6 +86,9 @@ page2 = client.assessments.list(per_page: 10, **page1.next_cursor) if page1.next
 client.assessments.retrieve('id')
 client.assessments.links('id')
 client.assessments.scores('id')
+
+# Recalculate for another position in the same family. Sends pos_ovr_id.
+client.assessments.scores('id', for_sibling_position_id: 'position_id')
 client.assessments.list
 client.assessments.create(position_id: 'id',
                           fields: { email: 'email', app_full_name: 'name' })
@@ -114,6 +117,16 @@ client.assessments.create(assessment_type_id: 'id',
     
 ```ruby
 client.assessment_types.list
+
+# Positions grouped into product families, with the languages each family supports.
+# Each entry is a PopEngine::AssessmentFamily.
+# The API field names (report_id, report_name, report_title) remain available.
+families = client.assessment_types.list_by_family
+families.first.name
+families.first.languages
+families.first.positions
+families.first.assessment_types # alias for positions
+families.first.report_id
 ```
 
 ## Development
