@@ -1,0 +1,47 @@
+{
+  "error_code": 0,
+  "error_text": "",
+  "command_from": "position_get",
+  "reports": [
+    {
+      "report_id": "101",
+      "report_name": "CCS2",
+      "deactivated": false,
+      "report_title": "ContactCenterScreen2.0&trade;",
+      "rep_cust": "",
+      "lang_list": "eng,spa",
+      "credits_left": "1000000000",
+      "positions": [
+        {
+          "position_id": "201",
+          "aname": "CCS2 Screening Tool",
+          "caption_tr": "0",
+          "title": ""
+        }
+      ]
+    },
+    {
+      "report_id": "102",
+      "report_name": "EPOP",
+      "deactivated": false,
+      "report_title": "ExpressPOP&trade;",
+      "rep_cust": "",
+      "lang_list": "eng,fre,spa,ptb,rus,rom,hun,tur,fas,chi,cht,mal,ind,khm,vie",
+      "credits_left": "1000000000",
+      "positions": [
+        {
+          "position_id": "202",
+          "aname": "EPOP™ Sales",
+          "caption_tr": "301",
+          "title": "Sales"
+        },
+        {
+          "position_id": "203",
+          "aname": "EPOP™ Sales Management",
+          "caption_tr": "302",
+          "title": "Sales Management"
+        }
+      ]
+    }
+  ]
+}

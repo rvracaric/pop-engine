@@ -383,5 +383,28 @@ RSpec.describe PopEngine::AssessmentsResource do
         expect(subject.reducers).to be_nil
       end
     end
+
+    context 'when scoring for a sibling position' do
+      let(:sibling_position_id) { '203' }
+      let(:request_body) do
+        {
+          command: 'score_calc_get',
+          partner_api: true,
+          application_id: assessment_id,
+          language_id: PopEngine::Client::DEFAULT_LANGUAGE_ID,
+          pos_ovr_id: sibling_position_id,
+          show_traits: true,
+          show_super_traits: true,
+          show_reducers: true,
+          show_answers: true
+        }
+      end
+
+      subject { client.assessments.scores(assessment_id, for_sibling_position_id: sibling_position_id) }
+
+      it 'should send pos_ovr_id' do
+        expect(subject).to be_a PopEngine::Assessment
+      end
+    end
   end
 end

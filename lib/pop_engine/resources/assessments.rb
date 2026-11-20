@@ -28,6 +28,10 @@ module PopEngine
     def scores(assessment_id, **options)
       options[:language_id] ||= client.language_id
 
+      # Allow alias for "pos_ovr_id" which re-calculates scores for a sibling assessment type from the same assessment family
+      sibling_position_id = options.delete(:for_sibling_position_id)
+      options[:pos_ovr_id] ||= sibling_position_id if sibling_position_id
+
       # Include additional information in the response
       %i(traits super_traits reducers answers).each do |feature_group|
         show_group = options.fetch(feature_group, options.fetch("show_#{feature_group}".to_sym, true)) # Allow for different naming conventions
